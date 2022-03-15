@@ -1,13 +1,4 @@
 body {
-<<<<<<< HEAD
-  height: 100vh;
-  background-image: url(Recursos/fondo.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: repeat-x;
-  text-align: center;
-  font-size: 1rem;
-=======
   height: 99vh;
   background-image: url(Recursos/fondo\ dia@2x.png);
   background-color: #66cccc;
@@ -26,7 +17,6 @@ section#gps {
   bottom: 100px;
   left: 10px;
   right: 10px;
->>>>>>> 2a916da49bfd489ca1d0ffd68bcaedf5bf7b6e4d
 }
 section#gps.activo {
   display: block;
@@ -71,14 +61,6 @@ button {
   text-align: center;
 }
 
-<<<<<<< HEAD
-@media (max-width: 1200px) {
-  body {
-    width: 100vw;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-=======
 button p:hover {
   font-family: "Press Start 2P", cursive;
   color: rgb(255, 255, 255);
@@ -97,5 +79,4 @@ button:hover {
   width: 10rem;
   height: 5rem;
   text-align: center;
->>>>>>> 2a916da49bfd489ca1d0ffd68bcaedf5bf7b6e4d
 }
