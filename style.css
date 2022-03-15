@@ -1,9 +1,11 @@
 body {
   height: 100vh;
   background-image: url(Recursos/fondo.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: repeat-x;
   text-align: center;
+  font-size: 1rem;
 }
 
 p {
@@ -18,7 +20,7 @@ img {
   width: 15rem;
 }
 
-/* button {
+button {
   background-image: url(Recursos/boton.svg);
   background-color: rgba(240, 255, 255, 0);
   background-size: contain;
@@ -31,4 +33,11 @@ img {
   height: 5rem;
   text-align: center;
 }
- */
+
+@media (max-width: 1200px) {
+  body {
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
