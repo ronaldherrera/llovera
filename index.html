@@ -4,25 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <title>Prueba</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="Recursos/gota.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>El Tiempo en 8-Bits</title>
   </head>
   <body>
-    <header>
-      <h1>8-BITS WEATHER</h1>
+    <header id="logo">
+      <img src="Recursos/logo.svg" alt="logo de el tiempo en 8 bits" />
     </header>
-    <main id="contenedor">
-      <section class="clima">
-        <img src="./IMG/cloud.png" alt="nubes" hidden id="cloud" />
-        <img src="./IMG/rain.png" alt="LLuvia" hidden id="rain" />
-        <img src="./IMG/sun.png" alt="LLuvia" hidden id="sun" />
-        <img src="./IMG/cloudy.png" alt="LLuvia" hidden id="cloudy" />
 
-        <p class="porfin"></p>
-      </section>
-      <button type="submit" id="boton">¿Que clima hace?</button>
-    </main>
-    <script type="module" src="JS/app.js"></script>
-    <!--<script src="./JS/geolocation.js"></script>
+    <section class="activo" id="gps">
+      <img src="Recursos/GPS-animacion.gif" alt="grafico de pantalla gps" />
+      <p>¿Nos dejas ver tu ubicación?</p>
+      <button type="submit" id="gps-boton"><p>PERMITIR GPS</p></button>
+    </section>
+
+    <section class="clima" hidden id="sol">
+      <img src="Recursos/sol-animacion.gif" alt="soleado" />
+      <p>Coge las gafas de sol por que saldrá el sol</p>
+    </section>
+
+    <section class="clima" hidden id="nublado">
+      <img src="Recursos/nublado-animacion.gif" alt="nublado" />
+      <p>No lloverá pero tampoco hará sol, estará nublado</p>
+    </section>
+
+    <section class="clima" hidden id="lluvia">
+      <img src="Recursos/lluvia-animacion.gif" alt="lloverá" />
+      <p>Lloverá en las proximas 8 horas</p>
+    </section>
+    <section class="clima" hidden id="aguacero">
+      <img src="Recursos/lluvia-animacion.gif" alt="aguacero" />
+      <p>Lloverá suavemente en las proximas 8 horas</p>
+    </section>
+    <section class="clima" hidden id="tormenta">
+      <img src="" alt="tormenta" />
+      <p>Habrá una tormenta en las proximas 8 horas</p>
+    </section>
+    <section class="clima" hidden id="nieve">
+      <img src="" alt="Nieve" />
+      <p>Lloverá suavemente en las proximas 8 horas</p>
+    </section>
+    <section class="clima" hidden id="neblina">
+      <img src="" alt="neblina" />
+      <p>Habrá niebla en las proximas 8 horas</p>
+    </section>
+    <section hidden id="error">
+      <img src="Recursos/error-animacion.gif" alt="error" />
+      <p>Ha habido un problema, vuelve aintentarlo</p>
+    </section>
+    <script src="scripts.js"></script>
   </body>
 </html>
