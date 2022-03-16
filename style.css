@@ -9,6 +9,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+body.night {
+  height: 99vh;
+  background-image: url(Recursos/fondo\ noche@2x.png);
+  background-color: #66cccc;
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 section#gps {
   display: none;
   text-align: center center;
