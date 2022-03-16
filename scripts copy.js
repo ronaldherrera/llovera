@@ -29,7 +29,19 @@ const succes = (pos) => {
         let tiempo = horas.weather;
         for (const datos of tiempo) {
           console.log(datos);
-          if (datos.main == "Clouds") {
+
+          switch (datos.main) {
+            case "Clouds":
+              cloud.append(myPosition);
+              cloud.removeAttribute("hidden");
+
+              break;
+
+            default:
+              break;
+          }
+
+          /* if (datos.main == "Clouds") {
             cloud.append(myPosition);
             cloud.removeAttribute("hidden");
           } else if (datos.main == "Rain" || datos.main == "Drizzle") {
@@ -44,20 +56,7 @@ const succes = (pos) => {
           } else if (datos.main == "Thunderstorm") {
             thunderstorm.append(myPosition);
             thunderstorm.removeAttribute("hidden");
-          } else if (
-            datos.main == "Mist" ||
-            datos.main == "Smoke" ||
-            datos.main == "Haze" ||
-            datos.main == "Dust" ||
-            datos.main == "Fog" ||
-            datos.main == "Sand" ||
-            datos.main == "Ash" ||
-            datos.main == "Squall" ||
-            datos.main == "Tornado"
-          ) {
-            mist.append(myPosition);
-            mist.removeAttribute("hidden");
-          }
+          } */
         }
       }
     })
