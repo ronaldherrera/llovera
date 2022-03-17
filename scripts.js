@@ -113,7 +113,6 @@ const weatherData = async (data) => {
   // console.log(data);
 
   for (const horas of [data.hourly.slice(1, 9)]) {
-    console.log(horas);
     //Se coloca la hora que horá y la temperaturá que habrá a esa hora
     const newWeathers = horas.map((clima) => {
       return {
@@ -122,20 +121,56 @@ const weatherData = async (data) => {
           minute: "2-digit",
         }),
         temp: clima.temp,
-        meteo: clima.weather.map((el) => el.main),
+        meteo: clima.weather,
       };
     });
-
+    console.log(newWeathers);
     listWeather(newWeathers);
   }
 };
 
 const listWeather = async (newWeather) => {
+  let meteo = newWeather.filter((el) => el.meteo.main);
+  console.log(meteo);
+  const climaFunction = (meteo) => {
+    for (let datos of meteo) {
+      switch (datos) {
+        case "Clouds":
+          imgNube;
+          break;
+        case "Rain":
+        case "Drizzle":
+          imgLluvia;
+          break;
+        case "Clear":
+          imgSol, imgLuna;
+          break;
+        case "Snow":
+          imgNieve;
+          break;
+        case "Thunderstorm":
+          imgTormenta;
+          break;
+        case "Mist":
+        case "Smoke":
+        case "Haze":
+        case "Dust":
+        case "Fog":
+        case "Sand":
+        case "Ash":
+        case "Squall":
+        case "Tornado":
+          imgNiebla;
+          break;
+      }
+    }
+  };
   const arrayHTMLweather = newWeather.map((clima) => {
     return `
     <li>
     <h2>${clima.hora}</h2>
-    <img src="${imgNube}">
+    <img src="${climaFunction(meteo)}">
+    <p>${clima.meteo.map((el) => el.main)}</p>
     <p>${clima.temp}</p>`;
   });
   myUl.innerHTML = `<ul>${arrayHTMLweather.join("")}</ul>`;
