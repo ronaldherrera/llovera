@@ -1,5 +1,11 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
-  height: 99vh;
+  height: 100vh;
   background-image: url(Recursos/fondo\ dia@2x.png);
   background-color: #66cccc;
   background-size: contain;
@@ -8,6 +14,21 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+body.noche {
+  min-height: 100vh;
+  background-image: url(Recursos/fondo\ noche@2x.png);
+  background-color: #66cccc;
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+header#logo {
+  margin: 1rem;
 }
 section#gps {
   display: none;
