@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-body.night {
+body.noche {
   min-height: 100vh;
   background-image: url(Recursos/fondo\ noche@2x.png);
   background-color: #66cccc;
