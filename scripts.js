@@ -12,6 +12,7 @@ const thunderstorm = document.getElementById("tormenta");
 const mist = document.getElementById("neblina");
 const myBody = document.querySelector("body");
 
+//Formateo de hora del dispositivo. De timestamp a horas
 function time(time) {
   let secs = Math.floor((time / 1000) % 60);
   let minutes = Math.floor((time / (1000 * 60)) % 60);
@@ -21,10 +22,15 @@ function time(time) {
   secs = secs < 10 ? "0" + secs : secs;
   return `${hours}:${minutes}:${secs}`;
 }
+
+//Función que accede a la latitud y longitud del sistema. A su vez, accede a la API de openweathermap
 const succes = (pos) => {
   const lat = /* pos.coords.latitude; */ 41.9038123;
   const lon = /* pos.coords.longitude; */ -8.8746549;
   console.log(pos);
+  const ahora = pos.timestamp + 1000 * 60 * 60;
+  const enOchoHoras = ahora + 8 * 1000 * 60 * 60;
+  //Esto guardarlo en localStorage
   const key = "5ac175d2902db4555e70111f79332e19";
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
 
@@ -34,10 +40,10 @@ const succes = (pos) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      const now = data.current.dt;
-      const sunset = data.current.sunset;
+      const now = data.current.dt; //Se recoge la hora actual
+      const sunset = data.current.sunset; //Se recogen los datos del amanecer para poner el modo noche
       console.log(now);
-      if (now >= sunset) {
+      if (now <= sunset) {
         myBody.classList = "day";
       } else {
         myBody.classList = "night";
@@ -45,9 +51,10 @@ const succes = (pos) => {
       for (const horas of data.hourly.slice(8, 9)) {
         let clima = horas.weather.map((el) => el.main);
         console.log(horas.dt);
-        myTime.textContent = `A las ${time(horas.dt - now)}`;
+        //Se coloca la hora que horá y la temperaturá que habrá a esa hora
+        myTime.textContent = `A las ${time(enOchoHoras)}`;
         myP.textContent = `Habrá una temperatura media de ${horas.temp}ºC`;
-
+        //Se incluye todas las condiciones climaticas que activan o deshabilitan cada section dependiendo del clima
         if (clima == "Clouds") {
           cloud.prepend(myTime);
           cloud.append(myP);
@@ -88,18 +95,24 @@ const succes = (pos) => {
 
     .catch((error) => console.error(error));
 };
+
+//Mostrar el error en caso de que algo falle
 const error = (error) => {
   console.error(error);
 };
+
+//Se crean opciones de proximidad para obtener la posición mas acertada posible
 const options = {
   enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 0,
 };
+
+//Se accede a la geolocalización a través del navegador
 const handleClickButton = () => {
   const geolocation = navigator.geolocation;
   geolocation.getCurrentPosition(succes, error, options);
   actGps.classList.remove("activo");
 };
-
+//Se crea el evento con el botón
 myButton.addEventListener("click", handleClickButton);
