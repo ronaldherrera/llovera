@@ -185,6 +185,7 @@ const backgroundDiaNoche = async (data) => {
     myBody.classList.remove("dia");
     myBody.classList.add("noche");
   }
+
 };
 
 const error = (error) => {
@@ -199,8 +200,10 @@ const options = {
 const handleClickButton = () => {
   const geolocation = navigator.geolocation;
   geolocation.getCurrentPosition(succes, error, options);
+
   carrusel.removeAttribute("hidden");
   actGps.classList.remove("activo");
+
 };
 
 myButton.addEventListener("click", handleClickButton);
