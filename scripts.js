@@ -38,8 +38,8 @@ const now = new Date().toLocaleString("es-ES", {
   dateStyle: "long",
 });
 const succes = async (pos) => {
-  const lat = await /* pos.coords.latitude */ 41.9025;
-  const lon = await /* pos.coords.longitude */ -8.87367;
+  const lat = await pos.coords.latitude;
+  const lon = await pos.coords.longitude;
   fetchData(lat, lon);
   currentWeatherData(lat, lon);
 };
@@ -113,6 +113,7 @@ const weatherData = async (data) => {
   // console.log(data);
 
   for (const horas of [data.hourly.slice(1, 9)]) {
+    console.log(horas);
     //Se coloca la hora que horá y la temperaturá que habrá a esa hora
     const newWeathers = horas.map((clima) => {
       return {
@@ -121,57 +122,21 @@ const weatherData = async (data) => {
           minute: "2-digit",
         }),
         temp: clima.temp,
-        meteo: clima.weather,
+        meteo: clima.weather.map((el) => el.main),
       };
     });
-    console.log(newWeathers);
+
     listWeather(newWeathers);
   }
 };
 
 const listWeather = async (newWeather) => {
-  let meteo = newWeather.filter((el) => el.meteo.main);
-  console.log(meteo);
-  const climaFunction = (meteo) => {
-    for (let datos of meteo) {
-      switch (datos) {
-        case "Clouds":
-          imgNube;
-          break;
-        case "Rain":
-        case "Drizzle":
-          imgLluvia;
-          break;
-        case "Clear":
-          imgSol, imgLuna;
-          break;
-        case "Snow":
-          imgNieve;
-          break;
-        case "Thunderstorm":
-          imgTormenta;
-          break;
-        case "Mist":
-        case "Smoke":
-        case "Haze":
-        case "Dust":
-        case "Fog":
-        case "Sand":
-        case "Ash":
-        case "Squall":
-        case "Tornado":
-          imgNiebla;
-          break;
-      }
-    }
-  };
   const arrayHTMLweather = newWeather.map((clima) => {
     return `
     <li>
-    <h2>${clima.hora}</h2>
-    <img src="${climaFunction(meteo)}">
-    <p>${clima.meteo.map((el) => el.main)}</p>
-    <p>${clima.temp}</p>`;
+    <p>${clima.hora}</p>
+    <img src="${imgNube}">
+    <p>${clima.temp}º</p>`;
   });
   myUl.innerHTML = `<ul>${arrayHTMLweather.join("")}</ul>`;
 };
@@ -185,7 +150,6 @@ const backgroundDiaNoche = async (data) => {
     myBody.classList.remove("dia");
     myBody.classList.add("noche");
   }
-
 };
 
 const error = (error) => {
@@ -200,10 +164,8 @@ const options = {
 const handleClickButton = () => {
   const geolocation = navigator.geolocation;
   geolocation.getCurrentPosition(succes, error, options);
-
   carrusel.removeAttribute("hidden");
   actGps.classList.remove("activo");
-
 };
 
 myButton.addEventListener("click", handleClickButton);
