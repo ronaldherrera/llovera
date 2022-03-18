@@ -1,103 +1,116 @@
-
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+html {
+  background-image: url(Recursos/fondo.png);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-attachment: fixed;
+}
 body {
-  height: 100vh;
-  background-image: url(Recursos/fondo\ dia@2x.png);
-  background-color: #66cccc;
-  background-size: contain;
-  background-position: center bottom;
-  background-repeat: repeat-x;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
+  display: grid;
+  grid-template-rows: 0.3fr 0.1fr 0.7fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "clima"
+    "carrusel";
+  justify-items: center;
 
+  gap: 0.5rem;
+}
 body.noche {
-  min-height: 100vh;
-  background-image: url(Recursos/fondo\ noche@2x.png);
+  background-image: url(Recursos/fondo-noche.png);
   background-color: #66cccc;
   background-size: contain;
-  background-position: center bottom;
+  background-position: fixed;
   background-repeat: repeat-x;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
 }
-header#logo {
-  margin: 1rem;
+header {
+  grid-area: header;
+  padding-top: 1rem;
 }
 section#gps {
   display: none;
-  text-align: center center;
-  position: fixed;
-  top: 100px;
-  bottom: 100px;
-  left: 10px;
-  right: 10px;
 }
 section#gps.activo {
-  display: block;
-  text-align: center center;
-  position: fixed;
-  top: 150px;
-  bottom: 100px;
-  left: 10px;
-  right: 10px;
+  grid-area: clima;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 2rem;
 }
-/*@media (max-width: 1200px) {
-  body {
-    width: 100vw;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}*/
-
+section#gps.activo img {
+  width: 15rem;
+}
 p {
   font-family: "Press Start 2P", cursive;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 header img {
+  height: 7rem;
+}
+section#despejado {
+  display: none;
+}
+section.clima {
+  justify-content: center;
+  justify-items: center;
+}
+section.clima img {
+  width: 10rem;
+}
+section#carrusel img {
+  width: 8rem;
+}
+input#boton {
   width: 15rem;
 }
 
-img {
-  width: 15rem;
+section#carrusel {
+  margin-top: 40px;
+  background-color: rgba(240, 248, 255, 0.219);
+  border-radius: 10px;
+  align-self: center;
 }
-
-button {
-  background-image: url(Recursos/boton.svg);
-  background-color: rgba(240, 255, 255, 0);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 0px;
-  text-align: center;
-  font-family: "Press Start 2P", cursive;
-  border: 0cm;
-  width: 10rem;
-  height: 5rem;
-  text-align: center;
+section.clima {
+  display: none;
 }
-
-button p:hover {
-  font-family: "Press Start 2P", cursive;
-  color: rgb(255, 255, 255);
-}
-
-button:hover {
-  background-image: url(Recursos/boton-hover.svg);
-  background-color: rgba(240, 255, 255, 0);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 0px;
-  text-align: center;
-  font-family: "Press Start 2P", cursive;
-
-  border: 0cm;
-  width: 10rem;
-  height: 5rem;
+ul {
+  grid-area: carrusel;
+  margin: 0;
+  padding: 0.3rem;
+  display: grid;
+  overflow-x: auto;
+  width: 50vw;
+  grid-auto-flow: column;
+  justify-content: center center;
+  align-items: center;
   text-align: center;
 }
+
+ul::-webkit-scrollbar {
+  background-color: rgba(61, 61, 66, 0);
+  height: 5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 61, 66, 0.397);
+  border-radius: 10px;
+}
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(61, 61, 66);
+}
+
+li {
+  list-style: none;
+}
+
+/* li img {
+  width: 6rem;
+} */
