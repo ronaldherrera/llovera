@@ -18,55 +18,15 @@
     <header id="logo">
       <img src="Recursos/logo.svg" alt="logo de el tiempo en 8 bits" />
     </header>
-
-    <section class="activo" id="gps">
-      <img src="Recursos/GPS-animacion.gif" alt="grafico de pantalla gps" />
-      <p>¿Nos dejas ver tu ubicación?</p>
-      <label
-        ><input type="image" src="Recursos/boton.svg" alt="Boton" id="boton"
-      /></label>
-    </section>
-    <section class="clima" id="despejado">
-      <img
-        class="sol"
-        id="sol"
-        src="Recursos/sol-animacion.gif"
-        alt="despejado"
-      />
-      <img
-        class="luna"
-        id="luna"
-        src="Recursos/luna-animacion.gif"
-        alt="despejado"
-      />
-      <p>Hace un clima perfecto para un paseo</p>
-    </section>
-    <section class="clima" id="nublado">
-      <img src="Recursos/nublado-animacion.gif" alt="nublado" />
-      <p>El cielo está cubierto de nubes</p>
-    </section>
-    <section class="clima" id="lluvia">
-      <img src="Recursos/lluvia-animacion.gif" alt="lloverá" />
-      <p>Coge un paraguas porque está lloviendo</p>
-    </section>
-    <section class="clima" id="tormenta">
-      <img src="Recursos/tormenta-animacion.gif" alt="tormenta" />
-      <p>Mejor quedate en casa, hay una tormenta</p>
-    </section>
-    <section class="clima" id="nieve">
-      <img src="Recursos/nieve-animacion.gif" alt="Nieve" />
-      <p>Abrigate bien, está nevando</p>
-    </section>
-    <section class="clima" id="neblina">
-      <img src="Recursos/niebla-animacion.gif" alt="neblina" />
-      <p>Mucha niebla, no vayas a Silent Hill</p>
-    </section>
-    <section hidden id="error">
-      <img src="Recursos/error-animacion.gif" alt="error" />
-      <p>Ha habido un problema, vuelve a intentarlo</p>
-    </section>
-    <section class="carrusel" id="carrusel"></section>
-
-    <script src="scripts.js"></script>
+    <main>
+      <section class="activo" id="gps">
+        <img src="Recursos/GPS-animacion.gif" alt="grafico de pantalla gps" />
+        <p>¿Nos dejas ver tu ubicación?</p>
+        <button type="submit" id="gps-boton"><p>PERMITIR GPS</p></button>
+      </section>
+      <section class="clima"></section>
+      <section class="carrusel" id="carrusel"></section>
+    </main>
+    <script type="module" src="./JS/scripts.js"></script>
   </body>
 </html>

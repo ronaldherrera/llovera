@@ -3,102 +3,117 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  max-height: 100vh;
-}
 body {
-  background-image: url(Recursos/fondo.png);
-  background-size: cover;
-  background-repeat: repeat-x;
-  background-position: bottom;
-  background-attachment: fixed;
-  display: grid;
-  grid-template-rows: 0.2fr 0.5fr 0.5fr;
-  grid-template-areas:
-    "header"
-    "clima"
-    "carrusel";
-  justify-items: center;
-  justify-content: center;
-
-  gap: 0.5rem;
-}
-body.noche {
-  background-image: url(Recursos/fondo-noche@2x.png);
+  height: 100vh;
+  background-image: url("Recursos/G.9.1.GPS-animacion.gif");
   background-color: #66cccc;
   background-size: cover;
-  background-position: bottom;
+  background-position: center center;
   background-repeat: repeat-x;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+
   background-attachment: fixed;
 }
-header {
-  grid-area: header;
-  padding-top: 1rem;
+body.noche {
+  background-image: url("Recursos/fondo-noche@2x.png");
+  background-position: center bottom;
+  background-size: contain;
+}
+body.dia {
+  background-image: url("Recursos/fondo-dia@2x.png");
+  background-position: center bottom;
+  background-size: cover;
 }
 section#gps {
   display: none;
 }
+header#logo {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100vw;
+}
 section#gps.activo {
-  grid-area: clima;
-  display: grid;
-  justify-items: center;
-  align-content: center;
+  display: flex;
+  text-align: center;
   gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-section#gps.activo img {
-  width: 15rem;
-}
+
 p {
   font-family: "Press Start 2P", cursive;
   padding: 0.5rem;
-  font-size: 1.2rem;
 }
 
-header img {
-  height: 10rem;
+img {
+  width: 10rem;
+  filter: drop-shadow(5px 5px 5px rgba(10, 10, 10, 0.712));
 }
-section#despejado {
-  display: none;
+
+button {
+  background-image: url(Recursos/boton.svg);
+  background-color: rgba(240, 255, 255, 0);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(5px 5px 5px rgba(10, 10, 10, 0.712));
+  text-align: center;
+  border: none;
+  width: 13rem;
+  height: 5rem;
+  text-align: center;
 }
-section.clima {
-  justify-content: center;
+
+button p:hover {
+  font-family: "Press Start 2P", cursive;
+  color: rgb(255, 255, 255);
+}
+
+button:hover {
+  background-image: url(Recursos/boton-hover.svg);
+  background-color: rgba(240, 255, 255, 0);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  border: none;
+  width: 13rem;
+  height: 5rem;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 0.1fr;
+
   justify-items: center;
-}
-section.clima img {
-  width: 15rem;
-}
-section#carrusel img {
-  width: 8rem;
-}
-input#boton {
-  width: 15rem;
+  justify-content: center;
 }
 
 section#carrusel {
-  margin-top: 1rem;
+  /* margin: 2rem; */
   background-color: rgba(240, 248, 255, 0.219);
-  border-radius: 0.8rem;
-  align-self: center;
-}
-section.clima {
-  display: none;
+  box-shadow: inset 0px 0px 5px 2px rgb(24, 24, 23);
+  border-radius: 1rem;
+  /* align-self: center; */
+  /* width: 50vw; */
+  justify-content: center;
 }
 ul {
-  grid-area: carrusel;
-  margin: 0;
-  padding: 0.3rem;
-  display: grid;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
   overflow-x: auto;
-  width: 50vw;
-  grid-auto-flow: column;
-  justify-content: center center;
-  align-items: center;
-  text-align: center;
+  list-style-type: disc;
 }
 
 ul::-webkit-scrollbar {
   background-color: rgba(61, 61, 66, 0);
-  height: 0.5rem;
+  height: 5px;
 }
 
 ul::-webkit-scrollbar-thumb {
@@ -106,13 +121,16 @@ ul::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 ul::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(61, 61, 66);
+  background-color: rgb(31, 31, 34);
 }
 
 li {
   list-style: none;
+  min-width: 25%;
+  height: 10%;
+  padding: 1rem;
 }
 
-/* li img {
-  width: 6rem;
-} */
+li img {
+  width: 100%;
+}
