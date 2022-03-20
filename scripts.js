@@ -13,7 +13,7 @@ const thunderstorm = document.getElementById("tormenta");
 const mist = document.getElementById("neblina");
 const myBody = document.querySelector("body");
 const myTemp = document.createElement("p");
-const myUl = document.querySelector("ul");
+const mySection = document.querySelector("section#carrusel");
 const imgNube = (document.createElement("img").src =
   "./Recursos/nublado-animacion.gif");
 const imgLuna = (document.createElement("img").src =
@@ -192,7 +192,7 @@ const listWeather = async (newWeathers) => {
     <p>${clima.temp}ºC</p> `;
     }
   });
-  myUl.innerHTML = `<ul>${arrayHTMLweather.join("")}</ul>`;
+  mySection.innerHTML = `<ul>${arrayHTMLweather.join("")}</ul>`;
 };
 
 const backgroundDiaNoche = async (data) => {

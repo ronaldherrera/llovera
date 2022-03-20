@@ -4,30 +4,32 @@
   box-sizing: border-box;
 }
 html {
+  max-height: 100vh;
+}
+body {
   background-image: url(Recursos/fondo.png);
   background-size: cover;
   background-repeat: repeat-x;
   background-position: bottom;
   background-attachment: fixed;
-}
-body {
   display: grid;
-  grid-template-rows: 0.3fr 0.1fr 0.7fr;
-  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 0.5fr 0.5fr;
   grid-template-areas:
     "header"
     "clima"
     "carrusel";
   justify-items: center;
+  justify-content: center;
 
   gap: 0.5rem;
 }
 body.noche {
-  background-image: url(Recursos/fondo-noche.png);
+  background-image: url(Recursos/fondo-noche@2x.png);
   background-color: #66cccc;
-  background-size: contain;
-  background-position: fixed;
+  background-size: cover;
+  background-position: bottom;
   background-repeat: repeat-x;
+  background-attachment: fixed;
 }
 header {
   grid-area: header;
@@ -49,11 +51,11 @@ section#gps.activo img {
 p {
   font-family: "Press Start 2P", cursive;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 header img {
-  height: 7rem;
+  height: 10rem;
 }
 section#despejado {
   display: none;
@@ -63,7 +65,7 @@ section.clima {
   justify-items: center;
 }
 section.clima img {
-  width: 10rem;
+  width: 15rem;
 }
 section#carrusel img {
   width: 8rem;
@@ -73,9 +75,9 @@ input#boton {
 }
 
 section#carrusel {
-  margin-top: 40px;
+  margin-top: 1rem;
   background-color: rgba(240, 248, 255, 0.219);
-  border-radius: 10px;
+  border-radius: 0.8rem;
   align-self: center;
 }
 section.clima {
@@ -96,7 +98,7 @@ ul {
 
 ul::-webkit-scrollbar {
   background-color: rgba(61, 61, 66, 0);
-  height: 5px;
+  height: 0.5rem;
 }
 
 ul::-webkit-scrollbar-thumb {
