@@ -5,7 +5,7 @@
 }
 body {
   height: 100vh;
-  background-image: url("Recursos/G.9.1.GPS-animacion.gif");
+  /* background-image: url("Recursos/G.9.1.GPS-animacion.gif"); */
   background-color: #66cccc;
   background-size: cover;
   background-position: center center;
@@ -13,7 +13,7 @@ body {
   text-align: center;
   display: grid;
   justify-content: center;
-
+  grid-template-rows: 0.2fr 0.8fr;
   background-attachment: fixed;
 }
 body.noche {
@@ -87,26 +87,23 @@ button:hover {
 
 main {
   display: grid;
-  grid-template-rows: 0.5fr 0.5fr 0.1fr;
+  grid-template-rows: 0.5fr 0.5fr;
 
   justify-items: center;
   justify-content: center;
 }
 
 section#carrusel {
-  /* margin: 2rem; */
   background-color: rgba(240, 248, 255, 0.219);
   box-shadow: inset 0px 0px 5px 2px rgb(24, 24, 23);
   border-radius: 1rem;
-  /* align-self: center; */
-  /* width: 50vw; */
-  justify-content: center;
+  align-self: center;
 }
 ul {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   overflow-x: auto;
   list-style-type: disc;
 }
@@ -126,7 +123,6 @@ ul::-webkit-scrollbar-thumb:hover {
 
 li {
   list-style: none;
-  min-width: 25%;
   height: 10%;
   padding: 1rem;
 }
