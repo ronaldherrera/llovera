@@ -65,6 +65,7 @@ button {
   width: 13rem;
   height: 5rem;
   text-align: center;
+  font-family: "Press Start 2P", cursive;
 }
 
 button p:hover {

@@ -1,9 +1,5 @@
 "use strict";
-import {
-  currentWeatherData,
-  weatherData,
-  backgroundDiaNoche,
-} from "./weatherData.js";
+import { currentWeatherData, fetchData } from "./weatherData.js";
 let localStorageLat;
 let localStorageLon;
 const localStorageCoords = window.localStorage.getItem("coords");
@@ -27,18 +23,9 @@ async function loadCoord() {
   } else {
     const lat = await localStorageLat;
     const lon = await localStorageLon;
-    console.log(lat, lon);
     fetchData(lat, lon);
     currentWeatherData(lat, lon);
   }
-}
-async function fetchData(lat, lon) {
-  const key = "5ffc44f30e5179f5e6420ea84b83cb9a";
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,daily&appid=${key}`;
-  const resp = await fetch(url);
-  const data = await resp.json();
-  weatherData(data);
-  backgroundDiaNoche(data);
 }
 
 const error = (error) => {
