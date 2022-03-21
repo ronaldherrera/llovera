@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="Recursos/0.sol.ico" type="image/x-icon" />
+    <link rel="icon" href="Recursos/0.sol.svg" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
     <title>El Tiempo en 8-Bits</title>
   </head>
-  <!---->
   <body class="dia">
     <main>
       <section class="activo" id="gps">
-        <img src="Recursos/GPS-animacion.gif" alt="grafico de pantalla gps" />
-        <p>¿Nos dejas ver tu ubicación?</p>
-        <button type="submit" id="gps-boton">PERMITIR GPS</button>
+        <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
+        <img
+          src="Recursos/G.9.GPS-animacion.gif"
+          alt="grafico de pantalla gps"
+        />
+        <h3>¿Nos dejas ver tu ubicación?</h3>
+        <button type="submit" id="gps-boton" class="gpsboton">
+          <h1>PERMITIR GPS</h1>
+        </button>
       </section>
       <div>
-        <header id="logo">
+        <header id="logo" class="invisible">
           <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
         </header>
         <section class="clima"></section>

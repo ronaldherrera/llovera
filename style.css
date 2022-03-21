@@ -39,6 +39,29 @@ body.noche {
   align-items: center;
   flex-direction: column;
 }
+main {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+header#logo.invisible {
+  display: none;
+}
+header#logo {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100vw;
+}
+div {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
 /*//CUERPO//*/
 
 /*FUENTES*/
@@ -57,14 +80,14 @@ h2 {
 }
 h3 {
   font-size: 20px;
-  text-align: right;
+  text-align: center;
 }
 h4 {
   font-size: 20px;
   text-align: right;
 }
 h5 {
-  font-size: 10px;
+  font-size: 12px;
   text-align: right;
   margin-bottom: 5px;
 }
@@ -94,10 +117,16 @@ header img {
   width: 10rem;
   height: 5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.gpsboton p:hover {
+.gpsboton h1:hover {
   font-family: "Press Start 2P", cursive;
   color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
 }
 .gpsboton:hover {
   background-image: url(Recursos/5.boton-hover.svg);
@@ -112,60 +141,7 @@ header img {
   height: 5rem;
   text-align: center;
 }
-.boton_buscar {
-  background-image: url(Recursos/4.1.boton-buscar.png);
-  background-color: rgba(240, 255, 255, 0);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 14px;
-  background-color: rgba(240, 248, 255, 0.671);
-  box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
-  border-radius: 5px 5px 5px 5px;
-  border: 0px;
-  width: 7vh;
-  height: 5vh;
-}
-.boton_buscar:hover {
-  background-image: url(Recursos/5.1.boton-buscar-hover.png);
-  background-color: rgba(240, 255, 255, 0);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 14px;
-  background-color: rgba(240, 248, 255, 0.671);
-  box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
-  border-radius: 5px 5px 5px 5px;
-  border: 0px;
-  width: 7vh;
-  height: 5vh;
-}
-.boton_volver {
-  background-image: url(Recursos/4.1.boton-buscar.png);
-  background-color: rgba(240, 255, 255, 0);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 14px;
-  background-color: rgba(240, 248, 255, 0.671);
-  box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
-  border-radius: 0px 5px 5px 0px;
-  border: 0px;
-  width: 5vh;
-}
-.boton_volver:hover {
-  background-image: url(Recursos/5.1.boton-buscar-hover.png);
-  background-color: rgba(240, 255, 255, 0);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 14px;
-  background-color: rgba(240, 248, 255, 0.671);
-  box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
-  border-radius: 0px 5px 5px 0px;
-  border: 0px;
-  width: 5vh;
-}
+
 /*//BOTONES//*/
 
 /*FORMULARIO*/
@@ -219,6 +195,7 @@ li img {
 }
 /*//lista//*/
 
+/*sections*/
 section#gps {
   background-color: aliceblue;
   background-image: url(Recursos/G.9.1.GPS-animacion.gif);
@@ -233,14 +210,6 @@ section#gps {
   justify-content: center;
   justify-content: space-evenly;
 }
-
-header#logo {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  width: 100vw;
-}
-
 section.clima {
   margin-left: 20px;
   margin-right: 20px;
@@ -250,7 +219,6 @@ section.clima {
   flex-direction: column;
   align-items: center;
 }
-
 section#carrusel {
   margin-top: 40px;
   margin-bottom: 20px;
@@ -259,21 +227,6 @@ section#carrusel {
   box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
   border-radius: 5px;
   align-self: center;
-  width: 50vh;
+  width: 60vh;
 }
-
-div {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-main {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-}
+/*//sections//*/
