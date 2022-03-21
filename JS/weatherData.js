@@ -6,21 +6,21 @@ const myBody = document.querySelector("body");
 const mySection = document.querySelector("section.clima");
 const myCarrusel = document.querySelector("section#carrusel");
 const imgNube = (document.createElement("img").src =
-  "./Recursos/nublado-animacion.gif");
+  "./Recursos/G.3.nublado-animacion.gif");
 const imgLuna = (document.createElement("img").src =
-  "./Recursos/luna-animacion.gif");
+  "./Recursos/G.1.1luna-animacion.gif");
 const imgSol = (document.createElement("img").src =
-  "./Recursos/sol-animacion.gif");
-const imgPocasNubes = (document.createElement("img").src =
-  "./Recursos/pocas-nubes-animacion.gif");
+  "./Recursos/G.1.sol-animacion.gif");
+const imgLlovizna = (document.createElement("img").src =
+  "./Recursos/G.4.lluvia-animacion.gif");
 const imgLluvia = (document.createElement("img").src =
-  "./Recursos/lluvia-animacion.gif");
+  "./Recursos/G.4.lluvia-animacion.gif");
 const imgTormenta = (document.createElement("img").src =
-  "./Recursos/tormenta-animacion.gif");
+  "./Recursos/G.6.tormenta-animacion.gif");
 const imgNieve = (document.createElement("img").src =
-  "./Recursos/nieve-animacion.gif");
+  "./Recursos/G.7.nieve-animacion.gif");
 const imgNiebla = (document.createElement("img").src =
-  "./Recursos/niebla-animacion.gif");
+  "./Recursos/G.8.niebla-animacion.gif");
 const now = new Date().toLocaleString("es-ES", {
   timeStyle: "short",
   dateStyle: "long",
@@ -41,62 +41,86 @@ const currentWeather = async (data) => {
   const hora = new Date(data.dt * 1000).getHours();
   const arrayCurrentWeather = clima.map((el) => {
     switch (el.main) {
-      case "Clouds":
-        return `<p>${now}</p>
-            <p>${position}</p>
-            <img src="${imgNube}">
-            <p>${temp}ºC</p>
-            <p> Hay algunas nubes en el cielo</p>`;
-      case "Rain":
-      case "Drizzle":
-        return `<p>${now}</p>
-            <p>${position}</p>
-            <img src="${imgLluvia}">
-            <p>${temp}ºC</p>
-            <p>Está lloviendo ahora mismo</p>`;
+      //despejado
       case "Clear":
         if (hora > 7 && hora < 20) {
-          return `<p>${now}</p>
-            <p>${position}</p>
+          //dia despejado
+          return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
             <img src="${imgSol}">
-            <p>${temp}ºC</p>
-            <p>El cielo está despejado</p>
+            <p>El cielo está despejado, azul como el mar</p>
             `;
+          //noche despejada
         } else {
-          return `<p>${now}</p>
-            <p>${position}</p>
+          return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
             <img src="${imgLuna}">
-            <p>${temp}ºC</p>
-            <p>El cielo está despejado</p>`;
+            <p>El cielo está despejado, mira que estrellas!!</p>`;
         }
+      //nublado
+      case "Clouds":
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
+            <img src="${imgNube}">
+            <p>El cielo esta nublado, por lo menos no llueve.</p>`;
+      //llovizna
+      case "Drizzle":
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
+            <img src="${imgLlovizna}">
+            <p>Está lloviznando, cala bobos lo llaman...</p>`;
+      //lluvia
+      case "Rain":
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
+            <img src="${imgLluvia}">
+            <p>Está lloviendo, como no te tapes "tivamojah"/p>`;
+      //nieve
       case "Snow":
-        return `<p>${now}</p>
-            <p>${position}</p>
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
             <img src="${imgNieve}">
-            <p>${temp}ºC</p>
-            <p>Abrígate porque está nevando</p>`;
+            <p>¡Que ilusion! ¡Esta nevando!</p>`;
+      //tormenta
       case "Thunderstorm":
-        return `<p>${now}</p>
-            <p>${position}</p>
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
             <img src="${imgTormenta}">
-  
-            <p>${temp}ºC</p>
-            <p>Resguardate, hay tormenta</p>`;
-
+            <p>¡¡TORMENTA!! No</p>`;
+      //tormenta2
+      case "Squall":
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
+            <img src="${imgTormenta}">
+            <p>¡¡TORMENTA!! No</p>`;
+      //niebla
       case "Mist":
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
+            <img src="${imgNiebla}">
+            <p>Hay niebla, mira por donde pisas</p>`;
+      //niebla2
+      case "Fog":
+        return `<h1>${now}</h1>
+            <h2>${position}</h2>
+            <h4>${temp}º</h4>
+            <img src="${imgNiebla}">
+            <p>Hay niebla, mira por donde pisas</p>`;
       case "Smoke":
       case "Haze":
       case "Dust":
-      case "Fog":
       case "Sand":
       case "Ash":
-      case "Squall":
       case "Tornado":
-        return `<p>${now}</p>
-            <p>${position}</p>
-            <img src="${imgNiebla}">
-            <p>${temp}ºC</p>
-            <p>Hay niebla, mira por donde pisas</p>`;
     }
   });
   mySection.innerHTML = arrayCurrentWeather.join("");
@@ -120,56 +144,75 @@ const weatherData = async (data) => {
 const listWeather = async (newWeathers) => {
   const arrayHTMLweather = newWeathers.map((clima) => {
     switch (clima.meteo) {
-      case "Clouds":
-        return ` <li>
-      <p>${clima.hora}</p>
-      <img src="${imgNube}">
-      <p>${clima.temp}ºC</p>`;
-
-      case "Rain":
-      case "Drizzle":
-        return ` <li>
-      <p>${clima.hora}</p>
-      <img src="${imgLluvia}">
-      <p>${clima.temp}ºC</p>`;
-
+      //despejado
       case "Clear":
-        if (clima.hora > "07:00" && clima.hora < "20:00") {
+        if (hora > 7 && hora < 20) {
+          //dia despejado
           return ` <li>
-      <p>${clima.hora}</p>
-      <img src="${imgSol}">
-      <p>${clima.temp}ºC</p>`;
+          <img src="${imgSol}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+          //noche despejada
         } else {
           return ` <li>
-        <p>${clima.hora}</p>
-        <img src="${imgLuna}">
-        <p>${clima.temp}ºC</p>`;
+          <img src="${imgLuna}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
         }
+      //nublado
+      case "Clouds":
+        return ` <li>
+          <img src="${imgNube}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //llovizna
+      case "Drizzle":
+        return ` <li>
+          <img src="${imgLlovizna}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //lluvia
+      case "Rain":
+        return ` <li>
+          <img src="${imgLluvia}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //nieve
       case "Snow":
         return ` <li>
-      <p>${clima.hora}</p>
-      <img src="${imgNieve}">
-      <p>${clima.temp}ºC</p> `;
-
+          <img src="${imgNieve}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //tormenta
       case "Thunderstorm":
         return ` <li>
-      <p>${clima.hora}</p>
-      <img src="${imgTormenta}">
-      <p>${clima.temp}ºC</p> `;
-
+          <img src="${imgTormenta}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //tormenta2
+      case "Squall":
+        return ` <li>
+          <img src="${imgTormenta}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //niebla
       case "Mist":
+        return ` <li>
+          <img src="${imgNiebla}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
+      //niebla2
+      case "Fog":
+        return ` <li>
+          <img src="${imgNiebla}">
+          <h5>${clima.temp}º</h5>
+          <h5>${clima.hora}</h5>`;
       case "Smoke":
       case "Haze":
       case "Dust":
-      case "Fog":
       case "Sand":
       case "Ash":
-      case "Squall":
       case "Tornado":
-        return ` <li>
-      <p>${clima.hora}</p>
-      <img src="${imgNiebla}">
-      <p>${clima.temp}ºC</p> `;
     }
   });
   myCarrusel.innerHTML = `<ul>${arrayHTMLweather.join("")}</ul>`;
@@ -193,3 +236,21 @@ async function fetchData(lat, lon) {
   weatherData(data);
   backgroundDiaNoche(data);
 }
+const getCoordsCity = async (city) => {
+  const resp = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city},ES&appid=${key}`
+  );
+  const data = await resp.json();
+  const lat = data.coord.lat;
+  const lon = data.coord.lon;
+  console.log(data);
+  fetchData(lat, lon);
+  currentWeatherData(lat, lon);
+};
+
+myForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(mySearch.value);
+  getCoordsCity(mySearch.value);
+  actGps.style.display = "none";
+});

@@ -14,26 +14,30 @@
     />
     <title>El Tiempo en 8-Bits</title>
   </head>
+  <!---->
   <body class="dia">
-    <header id="logo">
-      <img src="Recursos/logo.svg" alt="logo de el tiempo en 8 bits" />
-      <form>
-        <input
-          type="search"
-          name="location"
-          id="location"
-          placeholder="Indica tu ciudad"
-        />
-      </form>
-    </header>
     <main>
       <section class="activo" id="gps">
         <img src="Recursos/GPS-animacion.gif" alt="grafico de pantalla gps" />
         <p>¿Nos dejas ver tu ubicación?</p>
         <button type="submit" id="gps-boton">PERMITIR GPS</button>
       </section>
-      <section class="clima"></section>
-      <section class="carrusel" id="carrusel"></section>
+      <div>
+        <header id="logo">
+          <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
+        </header>
+        <section class="clima"></section>
+        <section class="carrusel" id="carrusel"></section>
+        <form>
+          <input
+            type="search"
+            name="location"
+            id="location"
+            class="busqueda"
+            placeholder="Indica tu ciudad"
+          />
+        </form>
+      </div>
     </main>
     <script type="module" src="./JS/scripts.js"></script>
   </body>
