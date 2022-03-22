@@ -18,15 +18,26 @@
     <header id="logo">
       <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
       <form>
+        <img
+          src="Recursos/G.9.GPS-animacion.gif"
+          alt="Logo GPS"
+          id="logo-gps"
+        />
         <input
           type="search"
           name="location"
           id="location"
-          placeholder="  INDICA TU CIUDAD"
+          placeholder="Ciudad"
         />
-        <input type="submit" value="Buscar" id="buscar" />
+        <input
+          type="image"
+          onmouseout="this.src='Recursos/G.11.boton-home.gif'"
+          onmouseover="this.src='Recursos/G.10.boton-viajar.gif'"
+          src="Recursos/G.11.boton-home.gif"
+          id="buscar"
+          class="buscar"
+        />
       </form>
-      <img src="Recursos/G.10.boton-viajar.gif" alt="Logo GPS" id="logo-gps" />
     </header>
     <main>
       <section class="activo" id="gps">
