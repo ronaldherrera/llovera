@@ -7,7 +7,7 @@ body {
   height: 100vh;
   background-color: #66cccc;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center center;
   background-repeat: repeat-x;
   text-align: center;
   display: grid;
@@ -148,9 +148,11 @@ ul::-webkit-scrollbar-thumb:hover {
 li {
   list-style: none;
   height: 10%;
-  padding: 0.3rem;
-  width: 100%;
+  padding: 0rem;
 }
 li p {
   padding: 0.3rem;
+}
+li img {
+  width: 70%;
 }

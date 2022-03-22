@@ -5,6 +5,7 @@ let localStorageLon;
 const localStorageCoords = window.localStorage.getItem("coords");
 const myButton = document.querySelector("button");
 const actGps = document.getElementById("gps");
+const cabecera = document.getElementById("logo");
 const logoGps = document.querySelector("img#logo-gps");
 
 const succes = async (pos) => {
@@ -42,12 +43,14 @@ const handleClickButton = () => {
   const geolocation = navigator.geolocation;
   geolocation.getCurrentPosition(succes, error, options);
   actGps.style.display = "none";
+  cabecera.classList.remove("invisible");
 };
 
 myButton.addEventListener("click", handleClickButton);
-
 logoGps.addEventListener("click", handleClickButton);
+//
 function init() {
   loadCoord();
 }
 init();
+//*/
