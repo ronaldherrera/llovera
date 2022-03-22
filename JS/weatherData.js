@@ -196,7 +196,7 @@ async function fetchData(lat, lon) {
 
 const getCoordsCity = async (city) => {
   const resp = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city},ES&appid=${key}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
   );
   const data = await resp.json();
   const lat = data.coord.lat;
