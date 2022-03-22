@@ -100,7 +100,7 @@ img {
 }
 
 section button {
-  background-image: url(Recursos/boton.svg);
+  background-image: url(Recursos/4.boton.svg);
   background-color: rgba(240, 255, 255, 0);
   background-size: contain;
   background-repeat: no-repeat;
@@ -119,7 +119,7 @@ button p:hover {
 }
 
 button:hover {
-  background-image: url(Recursos/boton-hover.svg);
+  background-image: url(Recursos/5.boton-hover.svg);
   background-color: rgba(240, 255, 255, 0);
   background-size: contain;
   background-repeat: no-repeat;
