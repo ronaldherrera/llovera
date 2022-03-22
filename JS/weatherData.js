@@ -45,74 +45,74 @@ const currentWeather = async (data) => {
       case "Clear":
         if (hora > 7 && hora < 20) {
           //dia despejado
-          return `<h1>${now}</h1>
+          return `<p>${now}</p>
             <h2>${position}</h2>
-            <h4>${temp}º</h4>
+            <p>${temp}º</p>
             <img src="${imgSol}">
             <p>El cielo está despejado, azul como el mar</p>
             `;
           //noche despejada
         } else {
-          return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+          return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgLuna}">
             <p>El cielo está despejado, mira que estrellas!!</p>`;
         }
       //nublado
       case "Clouds":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgNube}">
             <p>El cielo esta nublado, por lo menos no llueve.</p>`;
       //llovizna
       case "Drizzle":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgLlovizna}">
             <p>Está lloviznando, cala bobos lo llaman...</p>`;
       //lluvia
       case "Rain":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgLluvia}">
-            <p>Está lloviendo, como no te tapes "tivamojah"</p>`;
+            <p>Está lloviendo, no te olvides del paraguas</p>`;
       //nieve
       case "Snow":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgNieve}">
             <p>¡Que ilusion! ¡Esta nevando!</p>`;
       //tormenta
       case "Thunderstorm":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgTormenta}">
-            <p>¡¡TORMENTA!! No</p>`;
+            <p>Resguardate, hay tormenta</p>`;
       //tormenta2
       case "Squall":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgTormenta}">
-            <p>¡¡TORMENTA!! No</p>`;
+            <p>Cuidado, es un gran chubasco</p>`;
       //niebla
       case "Mist":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgNiebla}">
             <p>Hay niebla, mira por donde pisas</p>`;
       //niebla2
       case "Fog":
-        return `<h1>${now}</h1>
-            <h2>${position}</h2>
-            <h4>${temp}º</h4>
+        return `<p>${now}</p>
+            <p>${position}</p>
+            <p>${temp}º</p>
             <img src="${imgNiebla}">
             <p>Hay niebla, mira por donde pisas</p>`;
       case "Smoke":
@@ -150,64 +150,74 @@ const listWeather = async (newWeathers) => {
         if (hora > 7 && hora < 20) {
           //dia despejado
           return ` <li>
+          <p>${clima.hora}</p>
           <img src="${imgSol}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
           //noche despejada
         } else {
           return ` <li>
+          <p>${clima.hora}</p>
           <img src="${imgLuna}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
         }
       //nublado
       case "Clouds":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgNube}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //llovizna
       case "Drizzle":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgLlovizna}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //lluvia
       case "Rain":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgLluvia}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //nieve
       case "Snow":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgNieve}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //tormenta
       case "Thunderstorm":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgTormenta}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //tormenta2
       case "Squall":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgTormenta}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //niebla
       case "Mist":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgNiebla}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       //niebla2
       case "Fog":
         return ` <li>
+        <p>${clima.hora}</p>
           <img src="${imgNiebla}">
-          <h5>${clima.temp}º</h5>
-          <h5>${clima.hora}</h5>`;
+          <p>${clima.temp}º</p>
+          `;
       case "Smoke":
       case "Haze":
       case "Dust":
