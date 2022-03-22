@@ -79,7 +79,7 @@ const currentWeather = async (data) => {
             <h2>${position}</h2>
             <h4>${temp}º</h4>
             <img src="${imgLluvia}">
-            <p>Está lloviendo, como no te tapes "tivamojah"/p>`;
+            <p>Está lloviendo, como no te tapes "tivamojah"</p>`;
       //nieve
       case "Snow":
         return `<h1>${now}</h1>
@@ -142,6 +142,7 @@ const weatherData = async (data) => {
 };
 
 const listWeather = async (newWeathers) => {
+  const hora = new Date(newWeathers.dt * 1000).getHours();
   const arrayHTMLweather = newWeathers.map((clima) => {
     switch (clima.meteo) {
       //despejado

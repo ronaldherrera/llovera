@@ -15,35 +15,37 @@
     <title>El Tiempo en 8-Bits</title>
   </head>
   <body class="dia">
-    <main>
-      <section class="activo" id="gps">
-        <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
-        <img
-          src="Recursos/G.9.GPS-animacion.gif"
-          alt="grafico de pantalla gps"
+    <section class="activo" id="gps">
+      <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
+      <img src="Recursos/G.9.GPS-animacion.gif" alt="grafico de pantalla gps" />
+      <h3>¿Nos dejas ver tu ubicación?</h3>
+      <button type="submit" id="gps-boton" class="gpsboton">
+        <h1>PERMITIR GPS</h1>
+      </button>
+    </section>
+    <header id="logo" class="invisible">
+      <p><img src="Recursos/1.logo.svg" alt="Logo GPS" id="logo-gps" /></p>
+      <form class="formulario_busqueda">
+        <input
+          type="search"
+          name="location"
+          id="location"
+          class="busqueda"
+          placeholder="INDICA TU CIUDAD"
         />
-        <h3>¿Nos dejas ver tu ubicación?</h3>
-        <button type="submit" id="gps-boton" class="gpsboton">
-          <h1>PERMITIR GPS</h1>
-        </button>
-      </section>
-      <div>
-        <header id="logo" class="invisible">
-          <img src="Recursos/1.logo.svg" alt="logo de el tiempo en 8 bits" />
-        </header>
-        <section class="clima"></section>
-        <section class="carrusel" id="carrusel"></section>
-        <form>
-          <input
-            type="search"
-            name="location"
-            id="location"
-            class="busqueda"
-            placeholder="Indica tu ciudad"
-          />
-        </form>
-      </div>
-    </main>
+        <input
+          type="image"
+          onmouseout="this.src='Recursos/G.11.boton-home.gif'"
+          onmouseover="this.src='Recursos/G.10.boton-viajar.gif'"
+          src="Recursos/G.11.boton-home.gif"
+          id="buscar"
+          class="buscar"
+        />
+      </form>
+    </header>
+    <section class="clima"></section>
+    <section class="carrusel" id="carrusel"></section>
+
     <script type="module" src="./JS/scripts.js"></script>
   </body>
 </html>
