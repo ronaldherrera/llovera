@@ -1,73 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
 body {
-  height: 99vh;
-  margin: 0px 0px 0px 0px;
-  background-image: url(Recursos/2.fondo\ dia.png);
+  height: 100vh;
   background-color: #66cccc;
-  background-size: contain;
-  background-position: center bottom;
+  background-size: cover;
+  background-position: center center;
   background-repeat: repeat-x;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: 0.2fr 0.8fr;
+  background-attachment: fixed;
 }
 body.noche {
-  height: 99vh;
-  margin: 0px 0px 0px 0px;
-  background-image: url(Recursos/3.fondo\ noche.png);
-  background-color: #66cccc;
-  background-size: contain;
+  background-image: url("Recursos/fondo-noche@2x.png");
   background-position: center bottom;
-  background-repeat: repeat-x;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  background-size: contain;
 }
-
+body.dia {
+  background-image: url("Recursos/fondo-dia@2x.png");
+  background-position: center bottom;
+  background-size: contain;
+}
 section#gps {
   display: none;
 }
+header#logo {
+  padding: 0.5rem 0;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 0.5rem;
+  width: 90vw;
+}
+header#logo > img {
+  width: 10rem;
+}
+#location {
+  background-color: rgba(1, 44, 82, 0.377);
+  border: none;
+  box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
+  border-radius: 5px 5px 5px 5px;
+  height: 1.5rem;
+  width: 40vw;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+::placeholder {
+  color: rgba(1, 44, 82, 0.7);
+  font-size: 0.8rem;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#buscar {
+  filter: drop-shadow(5px 5px 5px rgba(10, 10, 10, 0.712));
+  border-radius: 2.5rem;
+  width: 4rem;
+  margin-left: -1.1rem;
+}
+h1 {
+  font-family: "Press Start 2P", bold;
+}
+header img#logo-gps {
+  filter: drop-shadow(5px 5px 5px rgba(10, 10, 10, 0.712));
+  width: 2.5rem;
+  border-radius: 50%;
+}
+header img#logo-gps:hover {
+  filter: drop-shadow(4px 0px 4px rgba(10, 10, 10, 0.712));
+  width: 2.5rem;
+  border-radius: 50%;
+}
 section#gps.activo {
-  background-color: aliceblue;
-  background-image: url(Recursos/G.9.1.GPS-animacion.gif);
-  background-size: 300px;
-  width: 100%;
-  height: 100%;
   display: flex;
   text-align: center;
-  position: fixed;
+  gap: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-content: space-evenly;
 }
 
 p {
   font-family: "Press Start 2P", cursive;
-}
-
-header img {
-  margin: 20px;
-  width: 15rem;
+  padding: 0.5rem;
 }
 
 img {
-  width: 15rem;
+  width: 7rem;
   filter: drop-shadow(5px 5px 5px rgba(10, 10, 10, 0.712));
 }
 
-button {
-  background-image: url(Recursos/4.boton.svg);
+section button {
+  background-image: url(Recursos/boton.svg);
   background-color: rgba(240, 255, 255, 0);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 0px;
   filter: drop-shadow(5px 5px 5px rgba(10, 10, 10, 0.712));
   text-align: center;
-  font-family: "Press Start 2P", cursive;
-  border: 0cm;
-  width: 10rem;
+  border: none;
+  width: 13rem;
   height: 5rem;
   text-align: center;
+  font-family: "Press Start 2P", cursive;
 }
 
 button p:hover {
@@ -76,27 +119,63 @@ button p:hover {
 }
 
 button:hover {
-  background-image: url(Recursos/5.boton-hover.svg);
+  background-image: url(Recursos/boton-hover.svg);
   background-color: rgba(240, 255, 255, 0);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 0px;
   text-align: center;
-  font-family: "Press Start 2P", cursive;
-  border: 0cm;
-  width: 10rem;
+
+  border: none;
+  width: 13rem;
   height: 5rem;
   text-align: center;
 }
-
-section#carrusel {
-  margin-top: 40px;
-  background-color: rgba(240, 248, 255, 0.219);
-  box-shadow: inset 0px 0px 5px 2px rgb(24, 24, 23);
-  border-radius: 15px;
-  align-self: center;
-  width: 50vh;
+section.clima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
 }
+main {
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 0.3rem;
+  justify-items: center;
+  justify-content: space-around;
+}
+h1 {
+  font-size: 10px;
+  text-align: right;
+  margin-bottom: 5px;
+}
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+h4 {
+  margin-top: 4px;
+  font-size: 20px;
+  text-align: center;
+}
+h5 {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+section#carrusel {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(104, 120, 134, 0.116);
+  box-shadow: inset 0px 2px 5px 1px rgba(24, 24, 23, 0.445);
+  border-radius: 5px;
+  align-self: center;
+  width: 95vw;
+  max-width: 30rem;
+}
+
 ul {
   display: flex;
   overflow-x: auto;
@@ -123,11 +202,20 @@ ul::-webkit-scrollbar-thumb:hover {
 
 li {
   list-style: none;
-  min-width: 25%;
   height: 10%;
-  padding: 15px;
+  padding: 0.8rem;
 }
-
+li h5 {
+  font-size: 0.6rem;
+}
 li img {
   width: 100%;
 }
+@media (max-width: 600px) {
+  body.dia {
+    background-size: cover;
+  }
+  body.noche {
+    background-size: cover;
+  }
+} ;
