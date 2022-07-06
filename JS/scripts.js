@@ -48,9 +48,4 @@ const handleClickButton = () => {
 
 myButton.addEventListener("click", handleClickButton);
 logoGps.addEventListener("click", handleClickButton);
-//
-function init() {
-  loadCoord();
-}
-init();
-//*/
+
